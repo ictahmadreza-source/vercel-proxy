@@ -1,8 +1,17 @@
+
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "https://178.105.33.157:443/noor?path=$1"
+      "source": "/(.*)",
+      "destination": "https://178.105.33.157:443/noor?path=$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Forwarded-Proto", "value": "https" }
+      ]
     }
   ]
 }
